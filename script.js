@@ -9,7 +9,12 @@ function main(stage){
 
 		mouseevent(function(){
 			//Requirements of the mouse to go to stage 2
-			return (mouse.down && mouse.x >= 100 && mouse.y >= 100 && mouse.x <= 200 && mouse.y <= 200);
+			if (mouse.down && mouse.x >= 100 && mouse.y >= 100 && mouse.x <= 200 && mouse.y <= 200){
+				return true;
+			}
+			else{
+				return false;
+			}
 		});
 	}
 
@@ -17,12 +22,18 @@ function main(stage){
 	//STAGE 2
 	//===================================
 	else if(stage == 2){
-		drawfillbox(100, 100, 200, 200, white);// Erase
-		drawfillbox(0, 0, 100, 100, blue);//    Draw
+		cls();
+		drawoval(50, 50, 50, 50, blue);//    Draw
 
 		mouseevent(function(){
 			//Requirements of the mouse to go to stage 3
-			return (mouse.down && mouse.x >= 0 && mouse.y >= 0 && mouse.x <= 100 && mouse.y <= 100);
+			if (Math.sqrt(Math.pow(mouse.x - 50, 2) + Math.pow(mouse.x - 50 , 2)) <= 50 && mouse.down){
+				//Pythagorean theorem to check if the mouse coordinates are within the radius of the circle
+				return true;
+			}
+			else{
+				return false;
+			}
 		});
 	}
 
@@ -38,7 +49,7 @@ function main(stage){
 	//STAGE 4
 	//===================================
 	else if(stage == 4){
-		drawfillbox(0, 0, 200, 200, white);
-		drawfillbox(50, 50, 150, 150, green);
+		cls();
+		drawimage('game.jpg', 50, 50, 150, 150);
 	}
 }
