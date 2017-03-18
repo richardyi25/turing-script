@@ -42,14 +42,9 @@ function main(stage){
 	//===================================
 	else if(stage == 3){
 		//          Filename   x  y  width  height
-		playvideo("video.mp4", 0, 0, 200, 200);
-	}
-
-	//===================================
-	//STAGE 4
-	//===================================
-	else if(stage == 4){
-		cls();
-		drawimage('game.jpg', 50, 50, 150, 150);
+		setscreen(200, 200);
+		drawimage("game.jpg", 0, 0, 100, 100);
+		drawimage("game.jpg", 50, 50, 150, 150);
+		drawimage("game.jpg", 100, 100, 200, 200);
 	}
 }

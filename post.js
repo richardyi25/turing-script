@@ -1,4 +1,3 @@
-$(document).ready(function(){
-	$('video').css('display', 'none');
+window.onload = function(){
 	main(1);
-});
+};
